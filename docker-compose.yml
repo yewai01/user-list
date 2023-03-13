@@ -6,7 +6,7 @@ services:
     build: ./docker/apache-service
     volumes: 
       - ./src:/var/www/html
-      - ./docker/apache-service/httpd/conf:/etc/httpd/conf
+      - ./docker/apache-service/httpd/conf/httpd.conf:/etc/httpd/conf/httpd.conf
       - ./docker/apache-service/httpd/conf.d/user-list.conf:/etc/httpd/conf.d/user-list.conf
     ports:
       - "8000:80"
