@@ -6,8 +6,8 @@ services:
     build: ./docker/apache-service
     volumes: 
       - ./src:/var/www/html
-      - ./docker/apache/httpd/conf:/etc/httpd/conf
-      - ./docker/apache/httpd/conf.d/user-list.conf:/etc/httpd/conf.d/user-list.conf
+      - ./docker/apache-service/httpd/conf:/etc/httpd/conf
+      - ./docker/apache-service/httpd/conf.d/user-list.conf:/etc/httpd/conf.d/user-list.conf
     ports:
       - "8000:80"
 
@@ -25,7 +25,7 @@ services:
     ports:
       - "9000:9000"
     depends_on:
-      - mysql-server
+      - mysql
 
   mysql:
     container_name: mysql-service
